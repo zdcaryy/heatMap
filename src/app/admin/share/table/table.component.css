@@ -1,0 +1,202 @@
+div,table,thead,tbody,td{
+	box-sizing: border-box;
+}
+.tableContainer{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.tableContainer table{
+	width: 100%;
+	table-layout: fixed;
+	cursor: default;
+	color: #e7e7e7;
+}
+.tableContainer table td{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/*表头*/
+.tableContainer .thead{
+	/*background-color: #f9f9f9;*/
+	/*border-top: 1px solid #e0e0e0;*/
+	border-bottom: 1px solid #23a3c3;
+	height: 50px;
+	position: relative;
+	z-index: 1;
+	cursor: default;
+	color: #24D3FF;
+}
+.tableContainer .thead tbody tr th{
+	text-align: center;
+	position: relative;
+}
+/*.tableContainer .thead tbody tr th.headers div{
+	line-height: 30px;
+	border-right: 1px solid #e0e0e0;
+}*/
+.tableContainer .thead tbody tr th.lastHeader div{
+	border: 0;
+}
+/*表头中的二级菜单*/
+.secMenu{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	margin-top: 1px;
+	box-shadow: 0 0 5px 1px #dcdcdc;
+	background-color: #fafafa;
+}
+.secMenu .menuTitle{
+	border-bottom: 1px solid #e0e0e0;
+}
+.secMenu .menuTitle span{
+	display: inline-block;
+	line-height: 60px;
+}
+/*.secMenu .menuTitle>span{
+	display: table-cell;
+	vertical-align: middle;
+	box-sizing: border-box;
+	height: 60px;
+	width: 100%;
+}*/
+.secMenu .dropItem{
+	font-weight: normal;
+	cursor: pointer;
+}
+.secMenu .dropItem:hover{
+	background-color: #e0e0e0;
+}
+
+
+/*表格内容，隐藏默认滚动条*/
+.tableContainer{
+	overflow: hidden;
+}
+.tableContainer .viewBox{
+	width: calc(100% + 18px);
+	height: 100%;
+	overflow-y: scroll;
+	/*overflow: hidden;*/
+}
+.tableContainer .viewBox .tbody tbody tr{
+	height: 50px;
+}
+.tableContainer .viewBox .tbody tbody tr:hover{
+	box-shadow: 0 0 15px 2px rgba(36,211,255,0.8) inset;
+}
+/*滚动条*/
+.tableContainer table .forScroll{
+	width: 20px;
+}
+.tableContainer .outerBox{
+	width: 100%;
+	height: calc(100% - 60px);
+	position: relative;
+}
+.tableContainer .viewBox .scrollBox{
+	width: 20px;
+	position: absolute;
+	right: 0;
+	top: 20px;
+	bottom: 20px;
+}
+.tableContainer .viewBox .scrollBox .scrollBase{
+	position: relative;
+	background-color: #bdbdbd;
+	height: 100%;
+	width: 2px;
+	margin: 0;
+}
+.tableContainer .viewBox .scrollBox .scrollBase .scrollBar{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 0;
+	background-color: #009688;
+	/*transition: height 0.05s;*/
+}
+.tableContainer .viewBox .scrollBox .scrollBase .scrollBar .scrollPoint{
+	background-color: #009688;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	top: -5px;
+	left: -5px;
+	cursor: pointer;
+	transition: width 0.2s,height 0.2s,top 0.2s,left 0.2s;
+}
+.tableContainer .viewBox .scrollBox .scrollBase .scrollBar .scrollPoint:hover{
+	background-color: #00C7B5;
+	width: 16px;
+	height: 16px;
+	top: -7px;
+	left: -7px;
+}
+
+/*checkbox样式*/
+.forCheck{
+	width: 25px;
+	text-align: right !important;
+}
+input[type=checkbox]{
+	/*清除默认样式*/
+	appearance:none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 16px;
+	height: 16px;
+	margin-bottom: -2px;
+	background-color: #fff;
+	border: 2px solid #c2c2c2;
+	outline: none;
+	box-sizing: border-box;
+	border-radius: 2px;
+	overflow: hidden;
+}
+input[type=checkbox]:before{
+	content: '\2713';
+  display: block;
+	font-size: 12px;
+	font-weight: 600;
+	transform: translate(6%,-14%);
+	color: #fff;
+}
+input[type=checkbox]:hover{
+	border-color: #999999;
+}
+input[type=checkbox]:checked{
+	background-color: #009688;
+	border-color: #009688;
+}
+
+/*表格中能够操作的元素，如删除、查看*/
+.canOper .opers{
+	cursor: pointer;
+}
+.canOper .opers:hover{
+	color: #24D3FF;
+}
+.canOper .sep{
+	
+}
+.canOper .opers:hover{
+	text-decoration: underline;
+}
+/*选中状态*/
+.secMenu .dropSelected{
+	background-color: #eeeeee;
+}
+
+/* 避免其他地方修改滚动条，影响这里的宽度 */
+::-webkit-scrollbar
+{
+    width: 18px !important;
+    /*height: 6px;*/
+}

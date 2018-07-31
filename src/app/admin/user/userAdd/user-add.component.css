@@ -1,0 +1,21 @@
+.myContainer{
+    width: 63%;
+    margin: 0 auto;
+    height: 80%;
+    margin-top: 3%;
+	position: relative;
+	background-image: url('/assets/img/form_border.png');
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	border: 10px solid rgba(0,0,0,0);
+}
+.myContainer .content{
+	position: absolute;
+	left: 25%;
+	right: 25%;
+	top: 20%;
+	bottom: 20%;
+	background-color: rgba(0,214,0,0.2);
+}

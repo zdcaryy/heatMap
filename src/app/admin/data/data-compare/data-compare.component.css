@@ -1,0 +1,32 @@
+.content{
+  padding:30px;
+}
+.item{
+  border:1px solid #205f95;
+  box-shadow:0 0 50px #205f95 inset;
+  padding:10px;
+}
+#pie{
+  width:35%;
+  height:400px;
+  float:left;
+  margin-bottom:20px;
+}
+#line{
+  width:calc(65% - 20px);
+  height:400px;
+  margin-left:20px;
+  margin-bottom:20px;
+  float:left;
+}
+#lines{
+  width:35%;
+  height:455px;
+  float:left;
+}
+#bar{
+  width:calc(65% - 20px);
+  height:455px;
+  margin-left:20px;
+  float:left;
+}

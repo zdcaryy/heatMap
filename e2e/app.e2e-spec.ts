@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('heat-map App', () => {
+describe('app-ui App', () => {
   let page: AppPage;
 
   beforeEach(() => {

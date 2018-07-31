@@ -1,0 +1,116 @@
+#admin{
+	width: 100%;
+	min-height: 100%;
+	background-image: url('/assets/img/bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: cover;
+	position: relative;
+}
+#admin #header{
+	color: #1296db;
+	line-height: 45px;
+	font-size: 0;
+	width: 100%;
+	/*white-space: nowrap;*/
+	overflow: hidden;
+	user-select:none;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+ul li{
+	display: inline-block;
+	font-size: 1.15rem;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	cursor: pointer;
+	outline: none;
+}
+ul li:hover{
+	color: #24D3FF;
+}
+/* 中间按钮固定宽度，居中，两侧自适应 */
+#left,#right,#center{
+	float: left;
+}
+#center{
+	width: 400px;
+	text-align: center;
+	padding: 0px 20px;
+}
+#center li{
+	color: #fff;
+	width: 100%;
+	font-size: 1.4rem;
+	background-image: url('/assets/img/homeBtn.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 90%;
+}
+#center li:hover{
+	background-image: url('/assets/img/homeBtn_light.png');
+}
+#center li:active{
+	background-image: url('/assets/img/homeBtn.png');
+}
+#center li.activePage{
+	background-image: url('/assets/img/homeBtn_light.png');
+}
+#left,#right{
+	width: 50%;
+	margin-right: -200px;
+	padding-right: 200px;
+}
+#left{
+	text-align: right;
+}
+/* 用户名字和退出按钮 */
+#right .forUser{
+	float: right;
+	margin-right: 4%;
+	font-size: 1rem;
+}
+#right .forUser::before{
+	content: '';
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-top: -3px;
+	margin-right: 3px;
+	vertical-align: middle;
+	background-position: center;
+	background-size: cover;
+}
+#right .userName::before{
+	background-image: url('/assets/img/person.png');
+}
+#right .userName:hover::before{
+	background-image: url('/assets/img/person_hover.png');
+}
+#right .logOut::before{
+	background-image: url('/assets/img/switch.png');
+}
+#right .logOut:hover::before{
+	background-image: url('/assets/img/switch_hover.png');
+}
+/* 竖线，间隔 */
+.sep{
+	width: 0;
+	font-size: 1rem;
+	margin: 0px 3%;
+	border-left: 1px solid #224a86;
+	vertical-align: middle;
+}
+.activePage{
+	color: #fafafa !important;
+}
+#child{
+	width: 100%;
+	/*height: 100%;*/
+	position: absolute;
+	top: 45px;
+	bottom: 0;
+}
