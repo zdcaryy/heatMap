@@ -1,3 +1,33 @@
-<p>
-  index works!
-</p>
+<div class="myContainer">
+  <div class="cont cont_1st">
+        <div class="cont_tit">
+          <img src="/assets/img/border_tip.png">
+          <span>区域分布</span>
+        </div>
+        <div></div>
+  </div>
+  <div class="cont cont_2nd">
+
+  </div>
+  <div class="cont cont_3rd">
+        <div class="cont_tit">
+          <img src="/assets/img/border_tip.png">
+          <span>摄像头状态</span>
+        </div>
+          <hotTable [heads]="heads" [bodys]="equipments" (operateEvent)="getOperateEvent($event)"></hotTable>
+  </div>
+  <div class="cont cont_4th">
+        <div class="cont_tit">
+          <img src="/assets/img/border_tip.png">
+          <span>区域详情</span>
+        </div>
+          <hotTable [heads]="heads" [bodys]="equipments" (operateEvent)="getOperateEvent($event)"></hotTable>
+  </div>
+  <div class="cont cont_5th">
+        <div class="cont_tit">
+          <img src="/assets/img/border_tip.png">
+          <span>园区人流量</span>
+        </div>
+        <div></div>
+  </div>
+</div>

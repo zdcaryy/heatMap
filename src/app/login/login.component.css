@@ -1,0 +1,225 @@
+.login-sub{
+	width:100%;
+	background-image:url('/assets/img/login.png');
+	background-size:100% 100%;
+	position:absolute;
+	top:0;
+	bottom:0;
+}
+.big-circle{
+	position:absolute;
+	right:22%;
+	top:51%;
+	margin-top:-270px;
+}
+.logo-top{
+	position:absolute;
+	left:50%;
+	top:15%;
+	margin-left: -367px;
+	text-align: center;
+}
+.logo-top>h2{
+	width:100%;
+	color:white;
+	font-size:30px;
+	letter-spacing:15px;
+	font-weight: bold;
+}
+.logo-top>img{
+	margin-top: -45px;
+}
+.big-circle>.imgTop{
+	position: relative;
+    z-index: 100;
+    top: 0px;
+    right: -158px;
+}
+.big-circle>.imgBottom{
+    position: relative;
+    z-index: 100;
+    top: -17px;
+    right: -68px;
+}
+.big-circle>h4>span{
+	width:50px;
+	height:2px;
+	display:inline-block;
+	background:white;
+	margin:0 3px 4px 3px;
+}
+.info-panel{
+	width:740px;
+	position:absolute;
+	left:10%;
+	top:23%;
+	background:rgba(25,57,77,0.5);
+	color: #fff;
+	padding: 60px;
+	border-radius: 15px;
+	box-shadow: 5px 5px 6px #08080852;
+}
+.info-panel>h2{
+   text-align: center;
+   letter-spacing:5px;
+   line-height: 40px; 
+   margin: 0 0 35px 0;
+}
+.info-panel>h4{
+	letter-spacing:3px;
+   line-height: 32px;
+}
+.info-version{
+	width:500px;
+	position:absolute;
+	text-align: center;
+	left:50%;
+	margin-left: -250px;
+	bottom:11%;
+	color: #fff;
+	font-size: 12px;
+	color: #d0f8ff;
+	
+}
+.version-icon{
+	display:inline-block;
+	width: 20px;
+    height: 20px;
+    background:url('/assets/img/version-icon.png') no-repeat center;
+    background-size: contain;
+}
+.logo-title{
+	width: 400px;
+	float: left;
+}
+input::-webkit-input-placeholder{
+    color:rgba(255,255,255,0.24);
+    font-size: 15px;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:rgba(255,255,255,0.24);
+    font-size: 15px;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:rgba(255,255,255,0.24);
+    font-size: 15px;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    color:rgba(255,255,255,0.24);
+    font-size: 15px;
+}
+.loginDiv{
+	width:390px;
+	height:410px;
+	margin-top: -72px;
+	background:none;
+	border-radius:5px;
+	padding: 80px 50px 0 50px;
+	background: #0d275d;
+	opacity: 0.7;
+	border: 1px solid rgba(85,227,255,0.61);
+}
+.login-div{
+	width:350px;
+	position:absolute;
+	top:50%;
+	right:0;
+	margin:-150px 300px 0 0;
+}
+.login-title{
+	width:100%;
+	text-align:center;
+	line-height:40px;
+	font-size:30px;
+	color:white;
+	padding:20px 0
+}
+.login-info{
+	width:100%;
+}
+.login-info form{
+	width:100%
+}
+.form-group{
+	border: 1px solid rgba(255,255,255,0.27);
+	margin: 33px auto;
+	padding:5px;
+	overflow: hidden;
+}
+.form-group>input{
+	border:none;
+	outline:none;
+	height:18px;
+	color:#fff;
+	background:none;
+	text-indent:2em;
+	letter-spacing:4px;
+	float: left;
+	border-left: 1px solid rgba(255,255,255,0.27);
+	margin: 5px 0 5px 10px;
+}
+.icon{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-top: 5px;
+	float: left;
+}
+.user-icon{
+	background: url('/assets/img/user.png') no-repeat center;
+	background-size: contain;
+}
+.pwd-icon{
+	background: url('/assets/img/pwd.png') no-repeat center;
+	background-size: contain;
+}
+.login-option{
+	overflow: hidden;
+}
+.login-other{
+	width:100px;
+	float:left;
+	text-indent:0.5em;
+	padding:10px 0;
+	color:#0057a3;
+	float:left
+}
+.login-other>input{
+	border:1px solid #0057a3;
+	vertical-align:-3px;
+	width:14px;
+	height:14px;
+	margin-right:5px
+}
+.login-other>span{
+	color:#ababab;
+}
+.login-forget{
+	width:100px;
+	text-indent:0.5em;
+	padding:13px 0 7px 0;
+	color:white;
+	float:right
+}
+.login-forget a{
+	text-decoration: none;
+	color:white;
+}
+.login-info form button{
+	width:100%;
+	padding:4px 0;
+	border: none;
+    font-size: 18px;
+	outline:none;
+	background: -webkit-linear-gradient(#2bd6fe, #7aedff); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#2bd6fe, #7aedff); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#2bd6fe, #7aedff); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#2bd6fe, #7aedff); /* 标准的语法 */
+	
+}
+.login-info form button:hover{
+	background: -webkit-linear-gradient(#20b2d4, #6dd4e4); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#20b2d4, #6dd4e4); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#20b2d4, #6dd4e4); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#20b2d4, #6dd4e4)
+}

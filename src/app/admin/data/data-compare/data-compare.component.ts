@@ -186,7 +186,7 @@ export class DataCompareComponent implements OnInit {
   /*********折线图1(line)逻辑start******/
   lineOption = {
     title: [{
-      left: 'center',
+      left: '200',
       text: '园区人流总量分布图',
       textStyle:{
         color:'#0e70af'
@@ -196,7 +196,7 @@ export class DataCompareComponent implements OnInit {
       trigger: 'axis'
     },
     xAxis: {
-      data: [7.1,7.2,7.3,7.4,7.5,7.6,7.7,7.8,7.9],
+      data: [7.1,7.2,7.3,7.4,7.5,7.6,7.7,7.8,7.9,7.15,7.11,7.12,7.13,7.14],
       axisLine:{
         lineStyle:{
           color:'#ccc'
@@ -210,6 +210,11 @@ export class DataCompareComponent implements OnInit {
     },
     yAxis: {
       // splitLine: {show: false},
+      splitLine:{
+        lineStyle:{
+          color:'rgba(222,222,222,.1)'
+        }
+      },
       axisLine:{
         lineStyle:{
           color:'#ccc'
@@ -227,6 +232,9 @@ export class DataCompareComponent implements OnInit {
         filterMode: 'filter',
         start: 0,
         end: 70,
+        textStyle:{
+          color:'#ccc'
+        }
       },
       {
         id: 'dataZoomY',
@@ -234,18 +242,124 @@ export class DataCompareComponent implements OnInit {
         yAxisIndex:0,
         filterMode: 'empty',
         start: 0,
-        end: 80
+        end: 100
       }
     ],
-    series: [{
-      type: 'line',
-      // showSymbol: false,
-      smooth:true,
-      data: [200,300,200,100,250,130,400,600,550]
-    }]
+    series: [
+      {
+        type: 'line',
+        // showSymbol: false,
+        smooth:true,
+        data: [200,300,200,100,250,130,400,600,550,200,150,200,100,400]
+      }
+    ]
   };
   lineDraw(){
 
   }
   /*********折线图1(line)逻辑end******/
+
+  /*********折线图2(lines)逻辑start******/
+  linesOption={
+    // backgroundColor:'rgba(222,222,222,.5)',
+    title: [{
+      top:10,
+      left: 'center',
+      text: '落日剧场',
+      textStyle:{
+        color:'#fff',
+        fontSize:14,
+        fontFamily:'宋体'
+      }
+    }],
+    tooltip: {
+      trigger: 'axis'
+    },
+    xAxis: {
+        data: ["06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12"],
+        axisLine: {
+          lineStyle: {
+            color: '#ccc'
+          }
+        },
+        axisLabel: {
+          show: true,
+          interval: 0
+        },
+        boundaryGap: false
+      },
+    yAxis: {
+      splitLine:{
+        lineStyle:{
+          color:'rgba(222,222,222,.1)'
+        }
+      },
+      axisLine:{
+        lineStyle:{
+          color:'#ccc'
+        }
+      }
+    },
+    grid:{
+      top:40,
+      height:'45%',
+    },
+    dataZoom:[
+      {
+        id: 'dataZoomX',
+        type: 'slider',
+        xAxisIndex: 0,
+        filterMode: 'filter',
+        start: 0,
+        end: 70,
+        textStyle:{
+          color:'#ccc',
+          height:10
+        },
+        height:20//该属性文档上没有提出
+      },
+      {
+        id: 'dataZoomY',
+        type: 'inside',
+        yAxisIndex:0,
+        filterMode: 'empty',
+        start: 0,
+        end: 100
+      }
+    ],
+    toolbox: {
+      show: true,
+      top:8,
+      right:20,
+      feature: {
+        dataZoom: {
+          show:false
+        },
+        dataView: {readOnly: false},
+        magicType: {type: ['line', 'bar']},
+        restore: {
+          show:false
+        },
+        saveAsImage: {},
+        mytool: {
+          show: true,
+          title: '添加到比较',
+          icon: 'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z',
+          onclick: function (){
+            alert('myToolHandler1')
+          }
+        },
+      }
+    },
+    series: [
+      {
+        type: 'line',
+        showSymbol: false,
+        data: [100,200,240,200,400,600,500,550],
+        smooth:true
+      }
+    ]
+  }
+  /*********折线图2(lines)逻辑end******/
+
 }

@@ -13,6 +13,7 @@ import { UserManageComponent } from "./user/userManage/user-manage.component";
 
 import{DataCompareComponent} from './data/data-compare/data-compare.component';
 
+
 const routes:Routes = [
 	{
 		path:'',
@@ -20,7 +21,7 @@ const routes:Routes = [
     children:[
     	{
     		path:'',
-    		redirectTo:'equipAdd',
+    		redirectTo:'index',
     		pathMatch:'full'
 			},
 			{
@@ -35,14 +36,14 @@ const routes:Routes = [
 				path: 'userManage',
 				component: UserManageComponent
 			},
-    	{
-    		path:'equipAdd',
-    		component:EquipAddComponent
-    	},
-    	{
-    		path:'equipManage',
-    		component:EquipManageComponent
-    	},
+			{
+				path:'equipAdd',
+				component:EquipAddComponent
+			},
+			{
+				path:'equipManage',
+				component:EquipManageComponent
+			},
       {
         path:'dataCompare',
         component:DataCompareComponent

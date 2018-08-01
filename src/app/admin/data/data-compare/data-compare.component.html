@@ -2,7 +2,21 @@
   <div echarts [options]="pieOption" id="pie" class="item"></div>
   <div echarts [options]="lineOption"  id="line" class="item"></div>
   <div style="clear:both;"></div>
-  <div id="lines" class="item"></div>
+  <div class="item" id="lines">
+    <div style="font-family:'sans-serif';color:#0e70af;font-size:18px;font-weight:700;text-align:center;margin-bottom:10px;">园区人流总量分布图</div>
+  <ul>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+    <li echarts [options]="linesOption"></li>
+  </ul>
+  </div>
   <div id="bar" class="item"></div>
 </div>
 

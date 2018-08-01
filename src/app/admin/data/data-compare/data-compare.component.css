@@ -11,6 +11,8 @@
   height:400px;
   float:left;
   margin-bottom:20px;
+  background:url("../../../../assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
 }
 #line{
   width:calc(65% - 20px);
@@ -18,15 +20,53 @@
   margin-left:20px;
   margin-bottom:20px;
   float:left;
+  background:url("../../../../assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
 }
 #lines{
   width:35%;
   height:455px;
   float:left;
+  background:url("../../../../assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
+}
+#lines ul{
+  list-style:none;
+  overflow:auto;
+  height:90%;
+  width:100%;
+  padding:0 10px;
+}
+#lines ul li{
+  margin-bottom:10px;
+  background:#042342;
+  height:50%;
 }
 #bar{
   width:calc(65% - 20px);
   height:455px;
   margin-left:20px;
   float:left;
+  background:url("../../../../assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
 }
+
+/*滚动条样式*/
+::-webkit-scrollbar {
+  /*width:10px;*/
+  height:10px;
+}
+::-webkit-scrollbar-track     {
+  width:2px;
+  background:#FF66D5;
+}
+::-webkit-scrollbar-track-piece {
+  width:2px;
+  background:#ff0000;
+}
+::-webkit-scrollbar-thumb{
+  background:#FFA711;
+  border-radius:4px;
+  width:4px;
+}
+
