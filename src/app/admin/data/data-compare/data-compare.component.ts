@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import{HostListener} from '@angular/core';
+
 declare var echarts:any;
 
 @Component({
@@ -11,6 +13,16 @@ export class DataCompareComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.scrollbar = document.querySelector(".scrollbar");
+    this.scrollbutton=document.querySelector('.scrollbutton');
+    this.content=document.querySelector('#lines ul');
+    this.scale=(this.content.scrollHeight-this.content.clientHeight)/(this.scrollbar.clientHeight-this.scrollbutton.clientHeight);
+    if(this.scale<=1){
+      this.scrollbar.style.display='none';
+    }
+    else{
+      this.scrollbar.style.display='block';
+    }
     this.mySort();
     this.mySlice();
     this.pieOption.series[0].data=JSON.parse(JSON.stringify(this.pieData));
@@ -359,7 +371,25 @@ export class DataCompareComponent implements OnInit {
         smooth:true
       }
     ]
+  };
+  scrollbar;
+  scrollbutton;
+  content;
+  scale:number;//滚动条与内容的比例
+  scroll(e){
+    //兼容ie
+    console.log(e.deltaY)
+    if(e.wheelDelta){
+      this.content.scrollTop+=(-e.wheelDelta);
+    }
+    else{
+      this.content.scrollTop+=e.deltaY;
+    }
+    this.scrollbutton.style.top=(this.content.scrollTop/ this.scale) + 'px';
+    console.log(this.content.scrollTop);
   }
+  // @HostListener('mousewheel', ['$event']) private onMouseWheel($event:Event):void {
+  //  console.log(111);
+  // };
   /*********折线图2(lines)逻辑end******/
-
 }
