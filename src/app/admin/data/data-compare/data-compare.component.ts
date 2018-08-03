@@ -376,20 +376,48 @@ export class DataCompareComponent implements OnInit {
   scrollbutton;
   content;
   scale:number;//滚动条与内容的比例
+  //滚动视口
   scroll(e){
-    //兼容ie
-    console.log(e.deltaY)
+    //兼容ie、谷歌
     if(e.wheelDelta){
-      this.content.scrollTop+=(-e.wheelDelta);
+      this.content.scrollTop+=(-e.wheelDelta/4);
     }
+    //兼容火狐
     else{
-      this.content.scrollTop+=e.deltaY;
+      this.content.scrollTop+=e.detail*10;
     }
     this.scrollbutton.style.top=(this.content.scrollTop/ this.scale) + 'px';
-    console.log(this.content.scrollTop);
+    this.linesLazyDraw();
   }
-  // @HostListener('mousewheel', ['$event']) private onMouseWheel($event:Event):void {
-  //  console.log(111);
-  // };
+
+  //滑动滑块
+   mouseDown(e){
+     if (e.target === this.scrollbutton) {
+       this.scrollbar.prevY = e.pageY;
+     }
+   }
+   //鼠标移动到滚动条外部，只要鼠标不松开仍然可以滑动滑块
+  @HostListener('window:mousemove', ['$event']) private onMouseMove($event:Event):void {
+    if (this.scrollbar.prevY) {
+      this.content.scrollTop += ($event['pageY'] - this.scrollbar.prevY) * this.scale;
+      this.scrollbutton.style.top = (this.content.scrollTop / this.scale) + 'px';
+      this.scrollbar.prevY = $event['pageY'];
+    }
+    $event.preventDefault();
+  };
+  @HostListener('window:mouseup', ['$event']) private onMouseUp($event:Event):void {
+    this.scrollbar.prevY = null;
+  };
+
+  //类似懒加载来动态加载canvas
+  oldScrollTop=0;
+  linesLazyDraw(){
+    if((this.content.scrollTop-this.oldScrollTop)>(document.querySelector('#lines ul li')['style'].height+10)){
+      this.oldScrollTop=this.content.scrollTop;
+      let index=Math.floor(this.content.scrollTop/(document.querySelector('#lines ul li')['style'].height+10))+1;
+      this.test1[index]=this.linesOption;console.log(index);
+    }
+  }
+  test1=[null,null,null,null,null,null,null,null];
   /*********折线图2(lines)逻辑end******/
 }
