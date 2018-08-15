@@ -1,0 +1,20 @@
+<div id="container">
+	<div id="content">
+		<div class="rows">
+			<span>手机号：</span>
+			<input type="text" style="width: 160px" autofocus="autofocus" [(ngModel)]="tel">
+		</div>
+		<div class="rows" *ngIf="errMsg" style="margin: -20px 0;line-height: 20px;font-size: 0.9rem;color: #ffeb3b">{{errMsg}}</div>
+		<div class="rows">
+			<span>验证码：</span>
+			<input type="text" style="width: 70px">
+			<button *ngIf="!count else countBtn" style="width: 86px;margin-left: 4px" (click)="getCode()">获取验证码</button>
+			<ng-template #countBtn>
+				<button class="disBtn" style="width: 86px;margin-left: 4px">{{count}}</button>
+			</ng-template>
+		</div>
+		<div class="rows">
+			<button style="width: 160px">确认</button>
+		</div>
+	</div>
+</div>

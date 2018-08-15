@@ -1,5 +1,65 @@
 <div class="myContainer">
   <div class="content">
-   
+   <form action="" #userForm = "ngForm" (ngSubmit)="onSubmit()"> 
+    <div class="form-group">
+      <label class="col-sm-3" for="nickName">姓&nbsp;&nbsp;&nbsp;&nbsp;名:</label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" id="nickName" name="nickName" autocomplete="off"
+          [(ngModel)]="addUser.nickName" 
+          #nickName="ngModel" 
+          pattern="^[\u4e00-\u9fa5]+(·[\u4e00-\u9fa5]+)*$" 
+            required>
+      </div> 
+      <div  class="col-sm-9 col-sm-offset-3" style="height: 20px;">  
+        <span *ngIf="nickName.invalid&&nickName.touched" style="color:rgb(255, 255, 255);">*请输入汉字姓名</span>
+      </div>
+      
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3" for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+      <div class="col-sm-9">
+      <input class="form-control" type="password" id="password" name="password" autocomplete="off"
+      [(ngModel)]="addUser.password" #password="ngModel" 
+      pattern="^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$"
+        required>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3" style="height: 20px;">
+            <span *ngIf="password.invalid&&password.touched" style="color:rgb(255, 255, 255);">*密码由8至16位字符数字组成</span>
+        </div>
+     
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3" for="phoneNumber">电话号码:</label>
+      <div class="col-sm-9">
+      <input class="form-control" type="text" id="phoneNumber" name="phoneNumber" autocomplete="off" 
+        [(ngModel)]="addUser.phoneNumber" #phoneNumber="ngModel" 
+        pattern="^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$"
+        required>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3" style="height: 20px;">
+       <span *ngIf="phoneNumber.invalid&&phoneNumber.touched" style="color:rgb(255, 255, 255);">*请输入正确格式的手机号</span>
+      </div>
+   </div>  
+  <div class="form-group">
+      <label class="col-sm-3" for="level">权限等级:</label>
+      <div class="col-sm-9">
+      <select class="form-control" id="level" name="level" autocomplete="off"
+      [(ngModel)]="addUser.level" #level="ngModel" placeholder="请选择">
+        <option *ngFor="let item of [
+              {label:'普通用户',value:'0'},
+               {label:'管理员',value:'1'},
+              {label:'超级管理员',value:'2'}
+              ]" [value]="item.value"
+               required>
+              {{item.label}}
+        </option>
+      </select>
+      </div>
+    </div>
+<div style="margin: 0 auto;overflow: hidden;margin-top: 50px;">
+  <button type="reset" class="bt col-sm-4">取&nbsp;&nbsp;&nbsp;&nbsp;消</button>
+  <button type="submit" class="bt col-sm-4  col-sm-offset-4" [disabled]="!userForm.valid">确&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+</div>
+   </form>
   </div>
 </div>

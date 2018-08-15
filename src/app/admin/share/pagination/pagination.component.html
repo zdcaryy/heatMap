@@ -1,0 +1,12 @@
+<ul class="pageUi clear">
+  <li (click)="changePage('first')" [class.disable]="pageValidation.isFirst">首页
+  </li>
+  <li (click)="changePage('pre')" [class.disable]="pageValidation.isFirst">上一页
+  </li>
+  <li (click)="changePage(page)" *ngFor="let page of pageArr" [class.active]="page==currentPage">{{page}}
+  </li>
+  <li (click)="changePage('next')" [class.disable]="pageValidation.isLast">下一页
+  </li>
+  <li (click)="changePage('last')" [class.disable]="pageValidation.isLast">末页
+  </li>
+</ul>

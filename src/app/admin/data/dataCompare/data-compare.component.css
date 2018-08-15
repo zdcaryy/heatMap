@@ -1,0 +1,149 @@
+.content{
+  padding:30px;
+  height:95%;
+}
+#myTool{
+  margin-bottom:20px;
+}
+#myTool label{
+ color:#1296db;
+  fontFamily:'宋体';
+  transition: all .5s;
+  -moz-transition: all .5s;	/* Firefox 4 */
+  -webkit-transition: all .5s;	/* Safari 和 Chrome */
+  -o-transition: all .5s;	/* Opera */
+}
+#myTool label:hover{
+  color:#24D3FF;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #1296db;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #1296db;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #1296db;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #1296db;
+}
+#myTool #startDate,#myTool #endDate{
+  background:none;
+  border:1px solid #1296db;
+  border-radius:4px;
+  color:#fff;
+  padding:5px;
+  transition: all .5s;
+  -moz-transition: all .5s;	/* Firefox 4 */
+  -webkit-transition: all .5s;	/* Safari 和 Chrome */
+  -o-transition: all .5s;	/* Opera */
+}
+#myTool #startDate:hover,#myTool #endDate:hover{
+  border:1px solid #24D3FF;
+}
+.item{
+  border:1px solid #205f95;
+  box-shadow:0 0 50px #205f95 inset;
+  padding:10px;
+  /*background-position: center !important;*/
+  /*background-size: 100% 100% !important;*/
+  /*background-repeat: no-repeat;*/
+  /*background-image:url("/assets/img/index_border1.png") !important;*/
+}
+#pie{
+  width:35%;
+  height:400px;
+  height:45%;
+  float:left;
+  margin-bottom:20px;
+  background:url("/assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
+}
+#line{
+  width:calc(65% - 20px);
+  height:400px;
+  height:45%;
+  margin-left:20px;
+  margin-bottom:20px;
+  float:left;
+  background:url("/assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
+}
+#lines{
+  width:35%;
+  height:400px;
+  height:53%;
+  float:left;
+  background:url("/assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
+  position:relative;
+}
+#lines ul{
+  list-style:none;
+  /*overflow-y: hidden;*/overflow:hidden;
+  height:90%;
+  width:100%;
+  padding:0 10px;
+}
+#lines ul li{
+  margin-bottom:10px;
+  background:#042342;
+  height:50%;
+}
+#bar{
+  width:calc(65% - 20px);
+  height:400px;
+  height:53%;
+  margin-left:20px;
+  float:left;
+  background:url("/assets/img/border_tip.png") no-repeat;
+  background-position:20px 17px;
+}
+
+/*滚动条样式*/
+.scrollbar{
+  height:85%;
+  width:1px;
+  background:#ccc;
+  position:absolute;
+  right:10px;
+  cursor:pointer;
+}
+.scrollbar .scrollbutton{
+  position:absolute;
+  width: 10px;
+  height:10px;
+  border-radius:50%;
+  background:bisque;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+.scrollbar .scrollbutton:hover{
+  background:#0e70af;
+  transform:translateX(-50%) scale(1.3) ;
+}
+.scrollbar .scrollbutton:active{
+  background:#0e70af;
+  transform:translateX(-50%) scale(1.3) ;
+}
+
+/*导出pdf*/
+.pdf-translate{
+  padding:5px;
+  background:rgba(0,0,0,0);
+  border: 1px solid #1296db;
+  border-radius: 3px;
+  color:#1296db;
+  float:right;
+  outline:none;
+  cursor:pointer;
+  transition: all .5s;
+  -moz-transition: all .5s;	/* Firefox 4 */
+  -webkit-transition: all .5s;	/* Safari 和 Chrome */
+  -o-transition: all .5s;	/* Opera */
+}
+.pdf-translate:hover{
+  border:1px solid #24D3FF;
+  color:#24D3FF;
+}

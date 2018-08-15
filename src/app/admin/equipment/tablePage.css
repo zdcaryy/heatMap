@@ -1,0 +1,47 @@
+.myContainer{
+	width: 100%;
+	height: 100%;
+	/*position: relative;*/
+	background-image: url('/assets/img/table_border.png');
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	border: 10px solid rgba(0,0,0,0);
+}
+.myContainer .content{
+	/*position: absolute;
+	left: 4.4%;
+	right: 4.4%;
+	top: 4.84%;
+	bottom: calc(6.18% + 40px);*/
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	top: 4%;
+	height: 90%;
+	/*background-color: rgba(0,0,0,0.25);*/
+}
+.myContainer .content .tableBox{
+	width: 100%;
+	height: 100%;
+	margin-bottom: -36px;
+	padding-bottom: 36px;
+}
+.myContainer pagination{
+	
+}
+/* placeholder */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: #d0d0d0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #d0d0d0;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #d0d0d0;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #d0d0d0;
+}
+

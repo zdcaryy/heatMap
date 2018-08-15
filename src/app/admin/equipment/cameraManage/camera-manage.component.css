@@ -1,0 +1,66 @@
+@import '../tablePage.css';
+@import '../modalBox.css';
+
+.blurBox{
+	filter: blur(5px);
+}
+
+.cursor-def{
+	cursor: default;
+}
+
+/*下拉列表*/
+.dropList{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 1;
+	margin-top: 2px;
+	padding: 2px 0;
+	border: 1px solid #23B5EA;
+	border-image: linear-gradient(120deg,#23B5EA,#2373DF) 1 round;
+	background-color: rgba(24,57,90,0.6);
+	text-align: left;
+}
+.dropList li{
+	cursor: pointer;
+	padding: 0px 8px;
+}
+.dropList li:hover{
+	background-color: rgba(35,181,234,0.6);
+}
+
+/* 下拉列表输入框后面的箭头 */
+.myIcon{
+	position: absolute;
+	right: 10px;
+}
+.myIcon::after{
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+}
+.myIcon-down::after{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	border-top-width: 5px;
+	border-top-color: #23B5EA;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 0;
+}
+.myIcon-up::after{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	border-bottom-width: 5px;
+	border-bottom-color: #23B5EA;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	border-top-width: 0;
+}

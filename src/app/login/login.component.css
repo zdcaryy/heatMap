@@ -2,6 +2,7 @@
 	width:100%;
 	background-image:url('/assets/img/login.png');
 	background-size:100% 100%;
+	background-repeat: no-repeat;
 	position:absolute;
 	top:0;
 	bottom:0;
@@ -149,6 +150,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 .form-group>input{
 	border:none;
 	outline:none;
+	width: 200px;
 	height:18px;
 	color:#fff;
 	background:none;

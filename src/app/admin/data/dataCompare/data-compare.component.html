@@ -1,0 +1,25 @@
+<div class="content">
+  <div id="myTool">
+    <label for="startDate">开始时间：</label>
+    <input class="flatpickr"   id="startDate">
+    <label for="endDate">结束时间：</label>
+    <input class="flatpickr"  id="endDate">
+    <button class="pdf-translate" (click)="pdfTranslate();">导出为pdf格式文件</button>
+  </div>
+  <div style="clear:both;"></div>
+  <div echarts [options]="pieOption" id="pie" class="item"></div>
+  <div echarts [options]="lineOption"  id="line" class="item"></div>
+  <div style="clear:both;"></div>
+  <div class="item" id="lines">
+    <div style="font-family:'sans-serif';color:#0e70af;font-size:18px;font-weight:700;text-align:center;margin-bottom:10px;">各园区人流量变化折线图</div>
+    <!--右侧滚动部分-->
+    <div class="scrollbar"  (mousedown)="mouseDown($event);">
+      <div class="scrollbutton"></div>
+    </div>
+    <ul (mousewheel)="scroll($event);" (DOMMouseScroll)="scroll($event);">
+      <li *ngFor="let item of linesOption;let i = index" [id]="i" echarts [options]="linesOption[i]"></li>
+    </ul>
+  </div>
+  <div echarts [options]="barOption" id="bar" class="item"></div>
+</div>
+

@@ -1,0 +1,14 @@
+﻿
+使用：
+<div imgScaling [imgUrl]="imgUrl" [config]="config" (getOuterBox)="getBox($event)"></div>
+        -----------   --------                 --------                 -------------
+             必须         必须                    非必须                      非必须
+
+//config中所有值都有默认值，都可以不写
+  config:object = {
+  	scaling:true,//是否启用缩放，默认true
+  	drag:true, //是否启用拖动，默认true
+  	scaleStep:0.15,//每滚动一次缩放多少，默认0.15，即 15%
+  	scaleMax:3,//能放大的最大倍数--相对于图片的原始像素，默认 3 ，即 300%
+  	scaleMin:0.2//能缩小的最小倍数--相对于图片的原始像素，默认 0.2，即 20%
+  }

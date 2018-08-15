@@ -5,13 +5,16 @@ import { AdminComponent } from './admin.component';
 
 import { IndexComponent } from "./index/index.component";
 
-import { EquipAddComponent } from './equipment/equipAdd/equip-add.component';
-import { EquipManageComponent } from './equipment/equipManage/equip-manage.component';
+import { CameraAddComponent } from './equipment/cameraAdd/camera-add.component';
+import { CameraManageComponent } from './equipment/cameraManage/camera-manage.component';
 
 import { UserAddComponent } from "./user/userAdd/user-add.component";
 import { UserManageComponent } from "./user/userManage/user-manage.component";
 
-import{DataCompareComponent} from './data/data-compare/data-compare.component';
+import { DataCompareComponent } from './data/dataCompare/data-compare.component';
+import { DataShowComponent } from './data/dataShow/data-show.component';
+import { DeviceManageComponent } from './equipment/deviceManage/device-manage.component';
+import { MapAddComponent } from './map/map-add.component';
 
 
 const routes:Routes = [
@@ -26,27 +29,48 @@ const routes:Routes = [
 			},
 			{
 				path: 'index',
-				component: IndexComponent
+				component: IndexComponent,
+        // canActivate:[AuthGuard]
 			},
 			{
 				path: 'userAdd',
-				component: UserAddComponent
+				component: UserAddComponent,
+        // canActivate:[AuthGuard]
 			},
 			{
 				path: 'userManage',
-				component: UserManageComponent
+				component: UserManageComponent,
+        // canActivate:[AuthGuard]
 			},
 			{
-				path:'equipAdd',
-				component:EquipAddComponent
+				path:'cameraAdd',
+				component:CameraAddComponent,
+        // canActivate:[AuthGuard]
 			},
 			{
-				path:'equipManage',
-				component:EquipManageComponent
+				path:'cameraManage',
+				component:CameraManageComponent,
+        // canActivate:[AuthGuard]
 			},
       {
         path:'dataCompare',
-        component:DataCompareComponent
+        component:DataCompareComponent,
+        // canActivate:[AuthGuard]
+      },
+      {
+        path:'dataShow',
+        component:DataShowComponent,
+        // canActivate:[AuthGuard]
+      },
+      {
+        path:'deviceManage',
+        component:DeviceManageComponent,
+        // canActivate:[AuthGuard]
+      },
+      {
+        path:'mapAdd',
+        component:MapAddComponent,
+        // canActivate:[AuthGuard]
       }
     ]
 	}

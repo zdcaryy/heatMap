@@ -1,0 +1,57 @@
+<div class="myContainer" [class.blurBox]="showModal">
+	<div class="content" >
+		<div class="tableBox">
+			<hotTable
+				[heads]="heads" 
+				[bodys]="cameras"
+				(operateEvent)="getOperateEvent($event)" 
+			></hotTable>
+		</div>
+			<!-- 超过一页才显示，*ngIf="totalPage>=2" -->
+		<pagination  [pageLinkSize]='pageSize' [currentPage]="nowPage" [pageCount]='totalPage' (onPageChange)="getPage($event)"></pagination>
+	</div>
+</div>
+<!-- 修改弹窗 -->
+<div class="modalCover" *ngIf="showModal" (click)="$event.target==$event.currentTarget?showModal=false:''" (mousedown)="hideDrop()">
+	<div class="modalBox">
+		<div class="modalContent">
+
+			<div class="modal-row">
+				<span class="row-left">编&emsp;号：</span>
+				<span class="row-right">
+					<input type="text" [(ngModel)]="modifyInfo.code">
+				</span>
+			</div>
+			<div class="modal-row">
+				<span class="row-left">区&emsp;域：</span>
+				<span class="row-right">
+					<input type="text" [(ngModel)]="modifyInfo.area">
+				</span>
+			</div>
+			<div class="modal-row">
+				<span class="row-left">位&emsp;置：</span>
+				<span class="row-right">
+					<input type="text" [(ngModel)]="modifyInfo.location">
+				</span>
+			</div>
+			<div class="modal-row">
+				<span class="row-left">设&emsp;备：</span>
+				<span class="row-right" (mousedown)="$event.stopPropagation()">
+					<input type="text" class="cursor-def" [(ngModel)]="modifyInfo.deviceCode" readonly (click)="showDrop=!showDrop" placeholder="-请选择-">
+					<span class="myIcon cursor-def" [ngClass]="showDrop?'myIcon-up':'myIcon-down'" (click)="showDrop=!showDrop"></span>
+					<ul class="dropList" *ngIf="showDrop">
+						<li *ngIf="noBindDevices.length==0">无可用设备</li>
+						<li *ngFor="let dev of noBindDevices" (click)="modifyInfo.deviceCode=dev.deviceCode;showDrop=false">{{dev.deviceCode}}</li>
+					</ul>
+				</span>
+			</div>
+			<div class="modal-foot">
+				<div class="modal-btn" (click)="showModal=false">取消</div>
+				<div class="modal-btn" (click)="confirmModify()">确认</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- 加载动画 -->
+<loading [show]="ifShowLoading"></loading>

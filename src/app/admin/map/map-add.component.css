@@ -1,0 +1,76 @@
+input,div,span{
+	box-sizing: border-box;
+}
+.myContainer{
+	width: 50%;
+	min-width: 520px;
+	height: 0;
+	padding-top: 30%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	background-image: url(/assets/img/form_border.png);
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.myContainer .content{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+.myContainer .content .addIcon{
+	width: 20%;
+	height: 0;
+	padding-top: 20%;
+	margin: 0 auto;
+	cursor: pointer;
+	background-image: url(/assets/img/upload-bg.png);
+	background-size: 100% 100%;
+	border-radius: 18px;
+}
+.myContainer .content .addIcon:hover{
+	background-color: rgba(1,137,188,0.1);
+}
+
+.mapInfo{
+	color: #f0f0f0;
+	width: 20%;
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: left;
+	font-size: 0;
+}
+.mapInfo p,span,input{
+	font-size: 1rem;
+}
+.myBtn{
+	display: inline-block;
+	width: 30%;
+	line-height: 22px;
+	background-color: rgba(38,108,204,0.45);
+	border: 1px solid #23B5EA;
+	border-image: linear-gradient(120deg,#23B5EA,#2373DF) 1 round;
+	cursor: pointer;
+	text-align: center;
+	color: #f0f0f0;
+}
+.myBtn:hover{
+	box-shadow: 0 0 10px 1px #23B5EA inset;
+}
+
+input[type=text]{
+	border: 1px solid #23B5EA;
+	border-image: linear-gradient(120deg,#23B5EA,#2373DF) 1 round;
+	outline: none;
+	box-shadow: none;
+	padding: 1px 8px;
+	width: 70%;
+	background-color: rgba(0,0,0,0);
+}

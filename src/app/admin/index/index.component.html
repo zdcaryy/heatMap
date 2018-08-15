@@ -4,30 +4,39 @@
           <img src="/assets/img/border_tip.png">
           <span>区域分布</span>
         </div>
-        <div></div>
+          <div echarts [options]="radarOption" id="radar" class="cont_radar"></div>
   </div>
   <div class="cont cont_2nd">
-
+    <div class="map">
+      <div imgScaling [imgUrl]="imgUrl" [config]="config" (getOuterBox)="getBox($event)" class="content">
+      </div>
+    </div>
+      
   </div>
-  <div class="cont cont_3rd">
+  <!-- <div class="cont cont_3rd">
         <div class="cont_tit">
           <img src="/assets/img/border_tip.png">
           <span>摄像头状态</span>
         </div>
-          <hotTable [heads]="heads" [bodys]="equipments" (operateEvent)="getOperateEvent($event)"></hotTable>
-  </div>
+        <div class="cont_table">
+        <hotTable [heads]="equipments_heads" [bodys]="equipments" (operateEvent)="getOperateEvent($event)"></hotTable>
+        </div>
+  </div> -->
   <div class="cont cont_4th">
         <div class="cont_tit">
           <img src="/assets/img/border_tip.png">
           <span>区域详情</span>
         </div>
-          <hotTable [heads]="heads" [bodys]="equipments" (operateEvent)="getOperateEvent($event)"></hotTable>
+        <div class="cont_table">
+        <hotTable [heads]="area_heads" [bodys]="area" (operateEvent)="getOperateEvent($event)"></hotTable>
+        </div>
+          
   </div>
   <div class="cont cont_5th">
-        <div class="cont_tit">
+        <div class="cont_tit" style="position: absolute">
           <img src="/assets/img/border_tip.png">
           <span>园区人流量</span>
         </div>
-        <div></div>
+          <div echarts [options]="lineOption" id="line" class="cont_line"></div>
   </div>
 </div>

@@ -1,0 +1,73 @@
+﻿
+<app-table 
+		[checkBox]="true"   // true or false , 是否显示 CheckBox , 默认false
+		(selectedListChange)="getSelectedList($event)" //CheckBox选中事件，可选，用于获取选中的列表
+		[heads]="yourHeads"  //表头,必须
+		[bodys]="yourBodys"  //表格内容，必须
+		(dropdownEvent)="getDropdownEvent($event)"  //下拉菜单事件，可选
+		(operateEvent)="getOperateEvent($event)" //操作事件，可选
+></app-table>
+
+	
+	yourHeads:object[];  -- 表头
+		[{
+			label:'姓名',  -- 即表头显示的文字  **必须**
+			field:'name',    -- 这一列所对应的[bodys]里的属性名  **必须**
+			child:['所有','已分配','待分配'],  -- 当有这个属性时，这个表头会拥有下拉菜单  **非必须**
+			operate:true, operations:['查看','删除']  -- 两个属性必须同时存在，此时这一列用于'操作'，'operations'即你的选项  **非必须**
+																								-- 此时field不会对应body中的属性，可以不写field
+			colorConfig:{小明:'#009688',小红:'#666666'}  -- *本字段*下的颜色替换，‘小明’和‘小红’替换为相应的颜色  -- 非模糊匹配   **非必须**  
+			textConfig:{小明:'状态0',小红:'状态1'}  -- 规则同颜色替换，替换为相应的文字，一般用于权限、状态等，将0、1、2替换为相应的文字 **非必须**
+			colStyle:{color:'red',fontFamily:'KaiTi'}  --  以对象的方式设置，可以设置这一列的样式
+			headStyle:{backgroundColor:'#f0f0f0',color:'green'}  -- 这一列的head的样式，1.若colStyle中有相同的，会覆盖之 2.会被colorConfig覆盖
+			bodyStyle:{fontFamily:'SimSun'}  -- 这一列的body的样式
+	  ↓↓  已取消  
+	  **	width:'80px',  -- 这一列的宽度，也可以是百分比(如:'20%')，没有设置宽度的列，均分剩余的宽度   **非必须**
+	  ↑↑  已取消
+		}]
+
+	yourBodys:object[];  -- 表格内容
+		[{
+			id:'9527',name:'小明',sex:0
+		}]
+
+--------例------------例------------例------------例-----------例-----------例-----------例-----------例-----------
+
+<app-table 
+		[checkBox]="true"
+		(selectedListChange)="getSelectedList($event)"
+		[heads]="myHeads" 
+		[bodys]="myBodys"
+		(dropdownEvent)="getDropdownEvent($event)" 
+		(operateEvent)="getOperateEvent($event)" 
+></app-table>
+
+
+
+		this.myHeads = [
+						{label:"编号",field:'num',width:'15%'},
+						{label:"姓名",field:'name',width:'20%',colStyle:{color:'red',fontFamily:'KaiTi'},headStyle:{backgroundColor:'#f0f0f0',color:'green'},bodyStyle:{fontFamily:'SimSun'}},
+						{label:"联系方式",field:'tel',width:'25%'},
+						{label:"调配状态",field:'status',width:'15%',child:['所有','已分配','待分配'],textConfig:{0:'已分配',1:'待分配'}},
+						{label:"操作",field:'caozuo',width:'25%',operate:true,operations:['查看','删除'],colorConfig:{查看:'purple',删除:'pink'}}
+					];
+
+	 	this.myBodys = [{id:'9527',name:'小明',tel:'13200000000',status:0},
+						{id:'9529',name:'小红',tel:'13200000001',status:1},
+						{id:'9533',name:'小刚',tel:'13200000002',status:0},
+						{id:'9534',name:'小丽',tel:'13200000003',status:1},
+						{id:'9535',name:'小茂',tel:'13200000004',status:0}
+					];
+
+	  getDropdownEvent(e){
+	    console.log(e);
+	    //switch(e)...
+	  }
+	  getOperateEvent(e){
+	    console.log(e);
+	    //switch(e)...
+	  }
+    getSelectedList(e){
+    	console.log(e);
+    	//this.selectedList = e;
+	  }

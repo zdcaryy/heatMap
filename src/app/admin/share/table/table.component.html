@@ -1,44 +1,44 @@
 <div class="tableContainer">
 	<!-- 显示表头 -->
-	<table class="thead">
+	<table class="thead" cellspacing="0">
 		<tbody>
 			<tr>
 				<!-- checkbox -->
 				<th *ngIf="checkBox" class="forCheck"><input type="checkbox" #checkbox_all title="全选" [checked]="selectedList.length&&selectedList.length==bodys.length" (click)="selectAll(checkbox_all.checked)"></th>
 				<!-- 主体 -->
-				<th class="headers" *ngFor="let head of heads;index as i" [class.lastHeader]="i==heads.length-1" [style.width]="head.width?head.width:''" (click)="dropList=head.field;head.child?$event.stopPropagation():'';">
+				<th class="headers" *ngFor="let head of heads;index as i" [class.lastHeader]="i==heads.length-1" [ngStyle]="extendHeadStyle(head)" (click)="dropList=head.field;head.child?$event.stopPropagation():'';">
 					<!-- 传的数据中含有'child'，则代表有二级菜单 -->
 					<ng-template #noChild><div>{{head.label}}</div></ng-template>
 					<div *ngIf="head.child;else noChild">
 						<!-- 隐藏input,用来存选中的下拉 -->
 						<input #forSelect type="text" style="display: none;" [value]="head.child[0]">
 						<span>{{head.label}}({{forSelect.value}})</span>
-						<span style="font-size: 12px;font-weight: 700" class="glyphicon glyphicon-triangle-bottom"></span>
+						<span style="font-size: 12px;font-weight: 700" class="myIcon myIcon-down"></span>
 						<!-- dropList判断显示谁的二级菜单 -->
 						<div class="secMenu" *ngIf="dropList==head.field" (click)="dropList='';$event.stopPropagation();">
 							<div class="menuTitle">
 								<span>{{head.label}}({{forSelect.value}})</span>
-								<span style="font-size: 12px;font-weight: 700" class="glyphicon glyphicon-triangle-top"></span>
+								<span style="font-size: 12px;font-weight: 700" class="myIcon myIcon-up"></span>
 							</div>
 							<div class="dropItem" [class.dropSelected]="forSelect.value==child" *ngFor="let child of head.child" (click)="forSelect.value=child;headOper(head.field,child)">{{child}}</div>
 						</div>
 					</div>
 				</th>
-				<!-- 滚动条占位 -->
-				<th class="forScroll" *ngIf="showScroll"></th>
+				<th *ngIf="showScroll" style="width: 20px"></th>
 			</tr>
 		</tbody>
 	</table>
+	
 	<!-- 显示内容 -->
 	<div class="outerBox">
-		<div class="viewBox" #viewBox [scrollTop]="boxScrollY" (scroll)="viewBoxScroll()">
-			<table class="tbody" #tbody>
+		<div class="viewBox" #viewBox  [class.hasScroll]="showScroll" (scroll)="viewBoxScroll()">
+			<table class="tbody" #tbody cellspacing="0">
 				<tbody>
 					<tr *ngFor="let body of bodys">
 						<!-- checkbox -->
 						<td *ngIf="checkBox" class="forCheck"><input type="checkbox" #checkbox_one [checked]="selectedList.indexOf(body)>-1" (click)="selectOne(body,checkbox_one.checked)"></td>
 						<!-- 根据表头的key来显示相对应的数据 -->
-						<td *ngFor="let head of heads" [style.width]="head.width?head.width:''">
+						<td *ngFor="let head of heads" [ngStyle]="extendBodyStyle(head)">
 							<!-- 判断是否是可以操作的内容 -->  
 							<span *ngIf="head.operate;else notOper" class="canOper">
 								<!-- [style.color]根据colorconfig来设置颜色 -->
@@ -51,24 +51,23 @@
 
 							<!-- 不可操作的普通内容 -->
 							<!-- ↓↓↓↓  普通内容可以替换文字  ↓↓↓↓↓  -->
-							<ng-template #notOper><span [style.color]="head.colorConfig&&head.colorConfig.hasOwnProperty([body[head.field]])?head.colorConfig[body[head.field]]:''">
-																			{{head.textConfig&&head.textConfig.hasOwnProperty([body[head.field]])?head.textConfig[body[head.field]]:body[head.field]}}</span></ng-template>
+							<ng-template #notOper><span [style.color]="head.colorConfig&&head.colorConfig.hasOwnProperty(body[head.field])?head.colorConfig[body[head.field]]:''">
+																			{{head.textConfig&&head.textConfig.hasOwnProperty(body[head.field])?head.textConfig[body[head.field]]:body[head.field]}}</span></ng-template>
 						</td>
-						<!-- 滚动条占位 -->
-						<td class="forScroll" *ngIf="showScroll"></td>
 					</tr>
 				</tbody>
 			</table>
-																<!-- 生命周期和检测机制，二次检测，会报错，c -->
-				<!--  滚动条	 -->
-			<div class="scrollBox" hahaha *ngIf="showScroll">
-				<div class="scrollBase" #bar>
-					<div class="scrollBar">
-						<div class="scrollPoint" (mousedown)="$event.preventDefault();canDrag=true;setMaxScroll()"></div>
-					</div>
+		</div>
+		<!--  滚动条	 -->
+		<div class="scrollBox" *ngIf="showScroll">
+			<div class="scrollBase" #bar>
+				<div class="scrollBar">
+					<div class="scrollPoint" (mousedown)="$event.preventDefault();canDrag=true;setMaxScroll()"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
+
+
 </div>

@@ -1,0 +1,41 @@
+<div class="myContainer">
+	<div imgScaling [imgUrl]="imgUrl" [config]="config" (getOuterBox)="getBox($event)" class="content">
+		<!-- <img scalingItem src="assets/img/2.png" alt=""> -->
+	</div>
+</div>
+<div class="addBox">
+	<p class="modal-row">
+		<span class="modal-left">摄像头：</span>
+		<span class="modal-right">
+			<input type="text" [(ngModel)]="addInfo.code">
+		</span>
+	</p>
+	<p class="modal-row">
+		<span class="modal-left">设&emsp;备：</span>
+		<span class="modal-right" (mousedown)="$event.stopPropagation()">
+			<input type="text" class="cursor-def" [(ngModel)]="addInfo.deviceCode" readonly (click)="showDrop=!showDrop" placeholder="-请选择-">
+			<span class="myIcon cursor-def" [ngClass]="showDrop?'myIcon-up':'myIcon-down'" (click)="showDrop=!showDrop"></span>
+			<ul class="dropList" *ngIf="showDrop">
+				<li *ngIf="noBindDevices.length==0">无可用设备</li>
+				<li *ngFor="let dev of noBindDevices" (click)="addInfo.deviceCode=dev.deviceCode;showDrop=false">{{dev.deviceCode}}</li>
+			</ul>
+		</span>
+	</p>
+	<p class="modal-row">
+		<span class="modal-left">区&emsp;域：</span>
+		<span class="modal-right">
+			<input type="text" [(ngModel)]="addInfo.area">
+		</span>
+	</p>
+	<p class="modal-row">
+		<span class="modal-left">位&emsp;置：</span>
+		<span class="modal-right">
+			<input type="text" [(ngModel)]="addInfo.location">
+		</span>
+	</p>
+	<p class="modal-foot">
+		<span class="modal-btn" (click)="hideAddBox()">取消</span>
+		<span class="modal-btn" (click)="addCamera()">确定</span>
+	</p>
+</div>
+<img src="/assets/img/pin.png" class="pins addPin">

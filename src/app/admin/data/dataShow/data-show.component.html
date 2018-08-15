@@ -1,0 +1,22 @@
+<div class="myContainer">
+  <div class="content">
+    <div id="myTool">
+      <label for="startDate">开始时间：</label>
+      <input class="flatpickr"   id="startDate">
+      <label for="endDate">结束时间：</label>
+      <input class="flatpickr"  id="endDate">
+      <label for="area-select">园区选择：</label>
+      <div style="display:inline-block;position:relative;" id="area-container">
+        <input type="text" id="area-select" (focus)="optionsShow();"  [value]="areaSelect" readonly="readonly" (blur)="optionHidden();">
+        <div id="area-option-container">
+          <ul id="area-option">
+            <li *ngFor="let i of ares"  (mousedown)="areaPick(i);">{{i}}</li>
+            <li *ngFor="let i of ares"  (mousedown)="areaPick(i);">{{i}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hotTable [heads]="heads" [bodys]="data"></hotTable>
+    <pagination  [pageLinkSize]='pageSize' [currentPage]="nowPage" [pageCount]='totalPage' (onPageChange)="getPage($event)" style="position:fixed;bottom:200px;transform:translateX(-50%);left:50%;"></pagination>
+  </div>
+</div>

@@ -1,0 +1,168 @@
+div,p,input{
+	box-sizing: border-box;
+}
+.myContainer{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url('/assets/img/table_border.png');
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	border: 10px solid rgba(0,0,0,0);
+}
+.myContainer .content{
+	position: absolute;
+	left: 4.5%;
+	right: 4.5%;
+	top: 5.4%;
+	bottom: 6.6%;
+	/*background-color: rgba(0,214,0,0.2);*/
+}
+
+.addBox{
+	/*width: 200px;*/
+	/*height: 200px;*/
+	border: 1px solid #23B5EA;
+	border-radius: 8px;
+	background-color: rgba(24,57,90,0.6);
+	box-shadow: 0 0 25px 2px #23B5EA inset;
+	padding: 30px;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	display: none;
+	color: #f0f0f0;
+}
+.addBox .modal-row{
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
+	white-space: nowrap;
+}
+.addBox .modal-row .modal-left,.modal-right{
+	display: inline-block;
+	position: relative;
+}
+.addBox .modal-foot{
+	margin-bottom: 0;
+	margin-top: 25px;
+	text-align: center;
+}
+.addBox .modal-foot .modal-btn{
+	display: inline-block;
+	border: 1px solid #23B5EA;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,0);
+	width: 80px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+.addBox .modal-foot .modal-btn:last-child{
+	margin-right: 0;
+}
+.addBox .modal-foot .modal-btn:hover{
+	/*background-color: rgba(35,181,234,0.25);*/
+	box-shadow: 0 0 15px 1px #23B5EA inset;
+
+}
+
+.addBox input[type=text]{
+	border: 1px solid #23B5EA;
+	border-radius: 5px;
+	outline: none;
+	box-shadow: none;
+	padding: 0px 8px;
+	width: 150px;
+	background-color: rgba(0,0,0,0);
+}
+
+/* 地图上做标记的图钉 */
+.pins{
+	width: 25px;
+	position: absolute;
+	transform: translate(-50%,-100%);
+}
+.addPin{
+	display: none;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/*下拉列表*/
+.dropList{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 1;
+	margin-top: 2px;
+	padding: 2px 0;
+	border: 1px solid #23B5EA;
+	border-radius: 5px;
+	background-color: #0c3d6b;
+}
+.dropList li{
+	cursor: pointer;
+	padding: 0px 8px;
+}
+.dropList li:hover{
+	background-color: rgba(35,181,234,0.6);
+}
+
+
+/* 下拉列表输入框后面的箭头 */
+.myIcon{
+	position: absolute;
+	right: 10px;
+}
+.myIcon::after{
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+}
+.myIcon-down::after{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	border-top-width: 5px;
+	border-top-color: #23B5EA;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 0;
+}
+.myIcon-up::after{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	border-bottom-width: 5px;
+	border-bottom-color: #23B5EA;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	border-top-width: 0;
+}
+
+/* common */
+.cursor-def{
+	cursor: default;
+}
+
+/* placeholder */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: #d0d0d0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #d0d0d0;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #d0d0d0;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #d0d0d0;
+}
+

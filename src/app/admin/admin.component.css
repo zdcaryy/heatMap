@@ -1,7 +1,8 @@
 #admin{
 	width: 100%;
+	min-width: 1300px;
 	min-height: 100%;
-	background-image: url('/assets/img/bg.jpg');
+	background-image: url(/assets/img/bg.jpg);
 	background-repeat: no-repeat;
 	background-position: center 0;
 	background-size: cover;
@@ -16,11 +17,7 @@
 	overflow: hidden;
 	user-select:none;
 }
-ul{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
+
 ul li{
 	display: inline-block;
 	font-size: 1.15rem;
@@ -45,20 +42,21 @@ ul li:hover{
 	color: #fff;
 	width: 100%;
 	font-size: 1.4rem;
-	background-image: url('/assets/img/homeBtn.png');
+	background-image: url(/assets/img/homeBtn.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 90%;
 }
 #center li:hover{
-	background-image: url('/assets/img/homeBtn_light.png');
+	background-image: url(/assets/img/homeBtn_light.png);
 }
 #center li:active{
-	background-image: url('/assets/img/homeBtn.png');
+	background-image: url(/assets/img/homeBtn.png);
 }
 #center li.activePage{
-	background-image: url('/assets/img/homeBtn_light.png');
+	background-image: url(/assets/img/homeBtn_light.png);
 }
+
 #left,#right{
 	width: 50%;
 	margin-right: -200px;
@@ -85,16 +83,16 @@ ul li:hover{
 	background-size: cover;
 }
 #right .userName::before{
-	background-image: url('/assets/img/person.png');
+	background-image: url(/assets/img/person.png);
 }
 #right .userName:hover::before{
-	background-image: url('/assets/img/person_hover.png');
+	background-image: url(/assets/img/person_hover.png);
 }
 #right .logOut::before{
-	background-image: url('/assets/img/switch.png');
+	background-image: url(/assets/img/switch.png);
 }
 #right .logOut:hover::before{
-	background-image: url('/assets/img/switch_hover.png');
+	background-image: url(/assets/img/switch_hover.png);
 }
 /* 竖线，间隔 */
 .sep{
@@ -113,4 +111,22 @@ ul li:hover{
 	position: absolute;
 	top: 45px;
 	bottom: 0;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 1600px){
+	#center{
+		width: 300px;	
+	}
+	#center li{
+		font-size: 1.3rem;
+		background-size: 100% 76%;
+	}
+	#left,#right{
+		margin-right: -150px;
+		padding-right: 150px;
+	}
+	.sep{
+		margin: 0px 1.5%;
+	}
 }

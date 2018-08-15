@@ -1,0 +1,133 @@
+.myContainer{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url('/assets/img/table_border.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  border: 10px solid rgba(0,0,0,0);
+}
+.myContainer .content{
+  position: absolute;
+  left: 4.4%;
+  right: 4.4%;
+  top: 4.84%;
+  bottom: 6.18%;
+  /*background-color: rgba(0,214,0,0.2);*/
+}
+#myTool{
+  margin-bottom:20px;
+}
+#myTool label{
+  color:#1296db;
+  fontFamily:'宋体';
+  transition: all .5s;
+  -moz-transition: all .5s;	/* Firefox 4 */
+  -webkit-transition: all .5s;	/* Safari 和 Chrome */
+  -o-transition: all .5s;	/* Opera */
+}
+#myTool label:hover{
+  color:#24D3FF;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #1296db;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #1296db;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #1296db;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #1296db;
+}
+#myTool #startDate,#myTool #endDate,#myTool #area-select{
+  background:none;
+  border:1px solid #1296db;
+  border-radius:4px;
+  color:#fff;
+  padding:5px;
+  transition: all .5s;
+  -moz-transition: all .5s;	/* Firefox 4 */
+  -webkit-transition: all .5s;	/* Safari 和 Chrome */
+  -o-transition: all .5s;	/* Opera */
+}
+#myTool #startDate:hover,#myTool #endDate:hover,#myTool #area-select:hover{
+  border:1px solid #24D3FF;
+}
+#area-select{
+  cursor: pointer;
+}
+#area-option-container{
+  display:none;
+  position:absolute;
+  min-width:200px;
+  z-index:99999;
+}
+#area-option-container:before{
+  content:"";
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0);
+  border-bottom-color:#1296db;
+  position:absolute;
+  left:22px;
+  top:-7px;
+  z-index:99;
+}
+#area-option{
+  /*position:absolute;*/
+  margin-top:2px;
+  color:#fff;
+  cursor: pointer;
+  border: 1px solid #1296db;
+  background: rgba(32,95,149,.8);
+  box-shadow: 0 0 100px #1296db inset;
+  border-radius: 3px;
+  min-width: 200px;
+  padding:10px;
+  max-height:200px;
+  overflow: auto;
+}
+#area-option li{
+  border-radius:5px;
+  padding:5px;
+}
+#area-option li:hover{
+  background:rgba(31,47,97,.5);
+}
+#area-option::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/*正常情况下滑块的样式*/
+#area-option::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.05);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+}
+/*鼠标悬浮在该类指向的控件上时滑块的样式*/
+#area-option:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.2);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+}
+/*鼠标悬浮在滑块上时滑块的样式*/
+#area-option::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0,0,0,.4);
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+}
+/*正常时候的主干部分*/
+#area-option::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  background-color: white;
+}
+/*鼠标悬浮在滚动条上的主干部分*/
+#area-option::-webkit-scrollbar-track:hover {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.4);
+  background-color: rgba(0,0,0,.01);
+}
+

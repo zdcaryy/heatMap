@@ -3,19 +3,20 @@
 	<div id="header">
 		<ul id="left">
 			<li routerLink="dataCompare" routerLinkActive="activePage">数据对比</li><span class="sep"></span>
-			<li routerLink="#" routerLinkActive="activePage">后台数据</li><span class="sep"></span>
-			<li routerLink="equipAdd" routerLinkActive="activePage">添加设备</li><span class="sep"></span>
-			<li routerLink="equipManage" routerLinkActive="activePage">设备管理</li>
+			<li routerLink="dataShow" routerLinkActive="activePage">后台数据</li><span class="sep"></span>
+			<li routerLink="cameraAdd" routerLinkActive="activePage">添加摄像头</li><span class="sep"></span>
+			<li routerLink="cameraManage" routerLinkActive="activePage">摄像头管理</li>
 		</ul>
 		<ul id="center">
 			<li routerLink="index" routerLinkActive="activePage">园区人流量分析系统</li>
 		</ul>
 		<ul id="right">
+			<li routerLink="deviceManage" routerLinkActive="activePage">设备管理</li><span class="sep"></span>
 			<li routerLink="userManage" routerLinkActive="activePage">用户管理</li><span class="sep"></span>
 			<li routerLink="userAdd" routerLinkActive="activePage">添加用户</li><span class="sep"></span>
-			<li routerLink="#" routerLinkActive="activePage">上传地图</li>
-			<li class="forUser logOut">退出</li>
-			<li class="forUser userName">张合安</li>
+			<li routerLink="mapAdd" routerLinkActive="activePage">上传地图</li>
+			<li class="forUser logOut" (click)="logOut()">退出</li>
+			<li class="forUser userName">{{username}}</li>
 		</ul>
 	</div>
 	<div id="child">

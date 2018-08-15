@@ -77,6 +77,11 @@ div,table,thead,tbody,td{
 .tableContainer{
 	overflow: hidden;
 }
+.tableContainer .outerBox{
+	width: 100%;
+	height: calc(100% - 50px);
+	position: relative;
+}
 .tableContainer .viewBox{
 	width: calc(100% + 18px);
 	height: 100%;
@@ -89,30 +94,26 @@ div,table,thead,tbody,td{
 .tableContainer .viewBox .tbody tbody tr:hover{
 	box-shadow: 0 0 15px 2px rgba(36,211,255,0.8) inset;
 }
+
 /*滚动条*/
-.tableContainer table .forScroll{
-	width: 20px;
+.tableContainer .viewBox.hasScroll{
+	padding-right: 20px;
 }
-.tableContainer .outerBox{
-	width: 100%;
-	height: calc(100% - 60px);
-	position: relative;
-}
-.tableContainer .viewBox .scrollBox{
+.tableContainer .scrollBox{
 	width: 20px;
 	position: absolute;
 	right: 0;
 	top: 20px;
 	bottom: 20px;
 }
-.tableContainer .viewBox .scrollBox .scrollBase{
+.tableContainer .scrollBox .scrollBase{
 	position: relative;
 	background-color: #bdbdbd;
 	height: 100%;
 	width: 2px;
-	margin: 0;
+	margin: 0 auto;
 }
-.tableContainer .viewBox .scrollBox .scrollBase .scrollBar{
+.tableContainer .scrollBox .scrollBase .scrollBar{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -120,7 +121,7 @@ div,table,thead,tbody,td{
 	background-color: #009688;
 	/*transition: height 0.05s;*/
 }
-.tableContainer .viewBox .scrollBox .scrollBase .scrollBar .scrollPoint{
+.tableContainer .scrollBox .scrollBase .scrollBar .scrollPoint{
 	background-color: #009688;
 	width: 12px;
 	height: 12px;
@@ -132,7 +133,7 @@ div,table,thead,tbody,td{
 	cursor: pointer;
 	transition: width 0.2s,height 0.2s,top 0.2s,left 0.2s;
 }
-.tableContainer .viewBox .scrollBox .scrollBase .scrollBar .scrollPoint:hover{
+.tableContainer .scrollBox .scrollBase .scrollBar .scrollPoint:hover{
 	background-color: #00C7B5;
 	width: 16px;
 	height: 16px;

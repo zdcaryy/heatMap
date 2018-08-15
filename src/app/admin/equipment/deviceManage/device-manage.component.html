@@ -1,0 +1,48 @@
+<div class="myContainer" [class.blurBox]="showModal">
+	<div class="content">
+		<div class="addNew glyphicon glyphicon-plus" (click)="showModal=true;modalType='add';initAddInfo()"></div>
+		<div class="tableBox">
+			<hotTable
+				[heads]="heads" 
+				[bodys]="devices"
+				(operateEvent)="getOperateEvent($event)" 
+			></hotTable>
+		</div>
+			<!-- 超过一页才显示，*ngIf="totalPage>=2" -->
+		<pagination  [pageLinkSize]='pageSize' [pageCount]='totalPage' [currentPage]="nowPage" (onPageChange)="getPage($event)"></pagination>
+	</div>
+</div>
+<!-- 弹窗 -->
+<div class="modalCover" *ngIf="showModal" [ngSwitch]="modalType">
+	<div class="modalBox">
+		
+		<div class="modalContent" *ngSwitchCase="'add'">
+			<div class="modal-row">
+				<span class="modal-left">编&emsp;号：</span>
+				<span class="modal-right">
+					<input type="text" [(ngModel)]="addInfo.deviceCode">
+				</span>
+			</div>
+			<div class="modal-foot">
+				<div (click)="showModal=false" class="modal-btn">取消</div>
+				<div (click)="addNew()" class="modal-btn">确定</div>
+			</div>
+		</div>
+
+		<div class="modalContent" *ngSwitchCase="'modify'">
+			<div class="modal-row">
+				<span class="modal-left">编&emsp;号：</span>
+				<span class="modal-right">
+					<input type="text" [(ngModel)]="modifyInfo.deviceCode">
+				</span>
+			</div>
+			<div class="modal-foot">
+				<div (click)="showModal=false" class="modal-btn">取消</div>
+				<div (click)="confirmModify()" class="modal-btn">确定</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- 加载动画 -->
+<loading [show]="ifShowLoading"></loading>

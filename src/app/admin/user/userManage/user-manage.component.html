@@ -1,5 +1,39 @@
 <div class="myContainer">
   <div class="content">
-    <hotTable [heads]="heads" [bodys]="equipments" (operateEvent)="getOperateEvent($event)"></hotTable>
+    <div class="tableBox">
+      <hotTable [heads]="heads" [bodys]="user_data" (operateEvent)="getOperateEvent($event)"></hotTable>
+    </div>
+    <!-- 超过一页才显示，*ngIf="totalPage>=2" -->
+    <pagination [pageLinkSize]='pageSize' [pageCount]='totalPage' (onPageChange)="getPage($event)"></pagination>
   </div>
+  <!-- 弹窗 -->
+  <div class="modalCover" *ngIf="showModal">
+    <div class="modalBox">
+      <div class="modalContent" >
+        <div class="modal-row">
+          <span class="modal-left">姓&emsp;名：</span>
+          <span class="modal-right">
+            <input type="text" [(ngModel)]="modifyInfo.nickName">
+          </span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-left">姓&emsp;名：</span>
+          <span class="modal-right">
+            <select [(ngModel)]="modifyInfo.level">
+              <option *ngFor="let item of userlevel" [value]="item.value" required>
+                {{item.label}}
+              </option>
+            </select>
+          </span>
+        </div>
+        <div class="modal-foot">
+          <div (click)="showModal=false;ngOnInit();" class="modal-btn">取消</div>
+          <div (click)="confirmModify()" class="modal-btn">确定</div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <!-- 加载动画 -->
+  <loading [show]="ifShowLoading"></loading>
 </div>

@@ -120,6 +120,45 @@ export class TableComponent implements OnInit {
     return typeof(data)==type;
   }
 
+  // 如果head中设置了 colStyle or headStyle or bodyStyle，根据优先级 => body or head > col，拼接
+  extendHeadStyle(head){
+    let hs = head.headStyle;
+    let cs = head.colStyle;
+    if(!hs && !cs){return}
+    cs = JSON.parse(JSON.stringify(cs));
+    if(hs&&cs){
+      for(let i in hs){
+        cs[i] = hs[i];
+      }
+      return cs;
+    }else if(cs){
+      return cs;
+    }else if(hs){
+      return hs;
+    }else{
+      return '';
+    }
+  }
+
+  extendBodyStyle(head){
+    let bs = head.bodyStyle;
+    let cs = head.colStyle;
+    if(!bs && !cs){return}
+    cs = JSON.parse(JSON.stringify(cs));
+    if(bs&&cs){
+      for(let i in bs){
+        cs[i] = bs[i];
+      }
+      return cs;
+    }else if(cs){
+      return cs;
+    }else if(bs){
+      return bs;
+    }else{
+      return '';
+    }
+  }
+
   // 滚动条显示与否
   ifShowScroll(){
     let viewBox = this.el.nativeElement.querySelector('.viewBox');

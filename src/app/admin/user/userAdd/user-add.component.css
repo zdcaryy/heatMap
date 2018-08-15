@@ -17,5 +17,37 @@
 	right: 25%;
 	top: 20%;
 	bottom: 20%;
-	background-color: rgba(0,214,0,0.2);
+	padding: 10px 20px;
+}
+.form-group{
+	overflow: hidden;
+}
+.form-group label{
+   font-size: 18px;
+   color: #ffffff;
+   font-weight: normal;
+   margin-top: 4px;
+}
+.form-control{
+  background: none;
+  border: 1px solid #00a0e2;
+  color: #ffffff;
+  border-radius: 0;
+  outline: none;
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+select>option{
+  background:#254568;
+}
+.bt{
+  height: 35px;
+  background: transparent;
+  border: 1px solid #00a0e2;
+  color: #ffffff;
+  font-size: 15px;
+  border-radius: 4px;
+}
+.bt:hover{
+  box-shadow: 0 0 15px 2px rgba(36,211,255,0.8) inset;
 }

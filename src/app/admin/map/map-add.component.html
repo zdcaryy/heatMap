@@ -1,0 +1,14 @@
+<div class="myContainer">
+	<div class="content">
+		<div class="addIcon" (click)="inputMap.click()">
+			<input #inputMap type="file" accept="image/*" style="display: none" (change)="chooseMap(inputMap.files)">
+		</div>
+		<div class="mapInfo" *ngIf="map">
+			<p style="padding-left: 8px">已选择图片：</p>
+			<div>
+				<input type="text" [value]="map.name" readonly>
+				<span class="myBtn" (click)="uploadMap()">上传</span>
+			</div>
+		</div>
+	</div>
+</div>
